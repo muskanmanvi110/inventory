@@ -5,7 +5,7 @@ import user_icon from '../Assets/person.png';
 import email_icon from '../Assets/email.png';
 import password_icon from '../Assets/password.png';
 
-const LoginSignup = () => {
+const LoginSignup = ({ onLogin }) => {
   const [action, setAction] = useState("SignUp");
 
   return (
@@ -33,13 +33,24 @@ const LoginSignup = () => {
   </div>
 )}
         <div className="buttons">
-          <div className="button">
-            <button onClick={() => setAction("Login")}>Login</button>
-          </div>
-          <div className="button">
-            <button onClick={() => setAction("SignUp")}>Sign Up</button>
-          </div>
-        </div>
+  <div className="button">
+    <button
+      onClick={() => {
+        if (action === "Login") {
+          onLogin(); // ⬅️ This triggers the switch to Header+Sidebar
+        } else {
+          setAction("Login");
+        }
+      }}
+    >
+      Login
+    </button>
+  </div>
+  <div className="button">
+    <button onClick={() => setAction("SignUp")}>Sign Up</button>
+  </div>
+</div>
+
       </div>
     </div>
   );
