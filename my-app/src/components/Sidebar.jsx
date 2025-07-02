@@ -21,9 +21,10 @@ function Sidebar({openSidebarToggle, OpenSidebar,onPageChange}) {
             </button>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <button onClick={() => onPageChange("Products")}>
+                
                     <BsFillArchiveFill className='icon'/> Products
-                </a>
+                </button>
             </li>
             <li className='sidebar-list-item'>
                 <a href="">
@@ -36,9 +37,9 @@ function Sidebar({openSidebarToggle, OpenSidebar,onPageChange}) {
                 </a>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <button onClick={() => onPageChange("inventory")}>
                     <BsListCheck className='icon'/> Inventory
-                </a>
+                </button>
             </li>
             <li className='sidebar-list-item'>
                 <a href="">
